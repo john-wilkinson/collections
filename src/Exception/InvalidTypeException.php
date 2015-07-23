@@ -20,7 +20,7 @@ class InvalidTypeException extends CollectionException
 	 * 
 	 * @var multitype
 	 */
-	protected $recieved;
+	protected $received;
 	
 	/**
 	 * 
@@ -50,6 +50,6 @@ class InvalidTypeException extends CollectionException
 	 */
 	public function getReceived()
 	{
-		return $this->recieved;
+		return $this->received;
 	}
 }

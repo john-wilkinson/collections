@@ -221,6 +221,13 @@ class ArrayListTest extends PHPUnit_Framework_TestCase
 		$this->assertEquals('["a","b","c","d","y","z"]', $json);
 	}
 	
+	public function testHashCode()
+	{
+		$code = $this->list->hashCode();
+		
+		$this->assertNotEmpty($code);
+	}
+	
 	/******************************************************
 	 ** Exceptional Cases
 	 ******************************************************/

@@ -4,3 +4,4 @@ docs
 vendor
 .settings
 .project
+.buildpath
