@@ -5,3 +5,5 @@ vendor
 .settings
 .project
 .buildpath
+.vagrant
+coverage
