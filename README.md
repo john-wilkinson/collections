@@ -1,4 +1,4 @@
-# :collections
+# collections
 
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Software License][ico-license]](LICENSE.md)
@@ -69,7 +69,7 @@ If you discover any security related issues, please email :author_email instead 
 
 ## Credits
 
-- [:John Mark Wilkinson][link-author]
+- [John Mark Wilkinson][link-author]
 - [All Contributors][link-contributors]
 
 ## License
@@ -81,12 +81,12 @@ The MIT License (MIT). Please see [License File](LICENSE.md) for more informatio
 [ico-travis]: https://img.shields.io/travis/john-wilkinson/collections/master.svg?style=flat-square
 [ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/thephpleague/:package_name.svg?style=flat-square
 [ico-code-quality]: https://img.shields.io/scrutinizer/g/thephpleague/:package_name.svg?style=flat-square
-[ico-downloads]: https://img.shields.io/packagist/dt/league/:package_name.svg?style=flat-square
+[ico-downloads]: https://img.shields.io/packagist/dt/jwilkinson/collections.svg?style=flat-square
 
 [link-packagist]: https://packagist.org/packages/jwilkinson/collections
 [link-travis]: https://travis-ci.org/john-wilkinson/collections
 [link-scrutinizer]: https://scrutinizer-ci.com/g/thephpleague/:package_name/code-structure
 [link-code-quality]: https://scrutinizer-ci.com/g/thephpleague/:package_name
-[link-downloads]: https://packagist.org/packages/league/:package_name
-[link-author]: https://github.com/:author_username
+[link-downloads]: https://packagist.org/packages/jwilkinson/collections
+[link-author]: https://github.com/jwilkinson
 [link-contributors]: ../../contributors
