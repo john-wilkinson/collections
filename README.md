@@ -11,6 +11,8 @@
 
 This is a consistent collections framework, strongly based off the Java Collections Framwork, with a lesser influence from ruby and python. It adheres to the PSR standards.
 
+One of the major goals of this project is to provide an interface that allows the internals to be re-written in c, and given php bindings. This would tremendously increase the efficiency of the framework.
+
 ## Install
 
 Via Composer
