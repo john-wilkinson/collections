@@ -68,6 +68,19 @@ class TupleTest extends PHPUnit_Framework_TestCase
 	{
 		$this->assertEquals('["a","b","c"]', $this->tuple->toJson());
 	}
+	
+	public function testOffsetExists()
+	{
+		$this->assertTrue(isset($this->tuple[0]));
+		$this->assertFalse(isset($this->tuple[-1]));
+		$this->assertFalse(isset($this->tuple[100]));
+		$this->assertFalse(isset($this->tuple['banana']));
+	}
+
+	public function testOffsetGet()
+	{
+		$this->assertEquals('c', $this->tuple[2]);
+	}
 
 
 	/********************************************
@@ -154,4 +167,22 @@ class TupleTest extends PHPUnit_Framework_TestCase
 		$tuple = new Tuple("\xB1\x31");
 		$tuple->toJson();
 	}
+
+	/**
+	 * @expectedException Jmw\Collection\Exception\UnsupportedOperationException
+	 */
+	public function testOffsetSet()
+	{
+		$this->tuple[3] = 'q';
+	}
+	
+	/**
+	 * @expectedException Jmw\Collection\Exception\UnsupportedOperationException
+	 */
+	public function testOffsetUnset()
+	{
+		unset($this->tuple[2]);
+	}
+	
+	
 }

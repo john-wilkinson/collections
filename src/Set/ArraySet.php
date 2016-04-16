@@ -6,7 +6,7 @@ use Jmw\Collection\Lists\ArrayList;
 /**
  * An implementation of a Set using a php array
  * It is advisable to use a HashSet in most instances,
- * as it is faster
+ * as it is significantly faster
  * @author john
  *
  */

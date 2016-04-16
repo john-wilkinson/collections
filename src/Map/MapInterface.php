@@ -7,7 +7,7 @@ namespace Jmw\Collection\Map;
  * @author john
  *
  */
-interface MapInterface
+interface MapInterface extends \ArrayAccess
 {
 	/**
 	 * Removes all of the mappings from this map.

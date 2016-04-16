@@ -5,6 +5,7 @@ use Jmw\Collection\Set\SetAbstract;
 use Jmw\Collection\Lists\ArrayList;
 use Jmw\Collection\Set\TupleSet;
 use Jmw\Collection\Set\ArraySet;
+use Jmw\Collection\Exception\UnsupportedOperationException;
 /**
  * Hash table based implementation of the Map interface. 
  * This implementation provides all of the optional map operations, 
@@ -186,4 +187,53 @@ class HashMap implements MapInterface
 	{
 		return new ArrayList(array_values($this->array));
 	}
+
+	/*********************************************
+	 ** Array Access Methods
+	 *********************************************/
+	
+	/**
+	 *
+	 * {@inheritDoc}
+	 * @see ArrayAccess::offsetExists()
+	 */
+	public function offsetExists($offset)
+	{
+		return $this->containsKey($offset);
+	}
+	
+	/**
+	 *
+	 * {@inheritDoc}
+	 * @see ArrayAccess::offsetGet()
+	 */
+	public function offsetGet($offset)
+	{
+		return $this->get($offset);
+	}
+	
+	/**
+	 *
+	 * {@inheritDoc}
+	 * @see ArrayAccess::offsetSet()
+	 */
+	public function offsetSet($offset, $value)
+	{
+		if($offset === null) {
+			throw new UnsupportedOperationException('append');
+		} else {
+			$this->put($offset, $value);
+		}
+	}
+	
+	/**
+	 *
+	 * {@inheritDoc}
+	 * @see ArrayAccess::offsetUnset()
+	 */
+	public function offsetUnset($offset)
+	{
+		$this->remove($offset);
+	}
+	
 }

@@ -7,7 +7,7 @@
 namespace Jmw\Collection\Lists;
 
 use Jmw\Collection\CollectionInterface;
-interface ListInterface extends CollectionInterface
+interface ListInterface extends CollectionInterface, \ArrayAccess
 {
 	/**
 	 * Inserts the specified element at the specified position in this list (optional operation).

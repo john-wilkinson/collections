@@ -313,4 +313,56 @@ class ArrayList extends CollectionAbstract implements ListInterface
 			throw new InvalidTypeException('int', gettype($var));
 		}
 	}
+	
+	/*********************************************
+	 ** Array Access Methods
+	 *********************************************/
+
+	/**
+	 *
+	 * {@inheritDoc}
+	 * @see ArrayAccess::offsetExists()
+	 */
+	public function offsetExists($offset)
+	{
+		if(!is_int($offset) || $offset >= $this->size() || $offset < 0) {
+			return false;
+		} else {
+			return true;
+		}
+	}
+	
+	/**
+	 *
+	 * {@inheritDoc}
+	 * @see ArrayAccess::offsetGet()
+	 */
+	public function offsetGet($offset)
+	{
+		return $this->get($offset);
+	}
+	
+	/**
+	 *
+	 * {@inheritDoc}
+	 * @see ArrayAccess::offsetSet()
+	 */
+	public function offsetSet($offset, $value)
+	{
+		if($offset === null) {
+			$this->add($value);
+		} else {
+			$this->addAt($offset, $value);
+		}
+	}
+	
+	/**
+	 *
+	 * {@inheritDoc}
+	 * @see ArrayAccess::offsetUnset()
+	 */
+	public function offsetUnset($offset)
+	{
+		$this->removeAt($offset);
+	}
 }

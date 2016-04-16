@@ -228,6 +228,36 @@ class ArrayListTest extends PHPUnit_Framework_TestCase
 		$this->assertNotEmpty($code);
 	}
 	
+	public function testOffsetExists()
+	{
+		$this->assertTrue(isset($this->list[0]));
+		$this->assertFalse(isset($this->list[-1]));
+		$this->assertFalse(isset($this->list[100]));
+		$this->assertFalse(isset($this->list['banana']));
+	}
+	
+	public function testOffsetSet()
+	{
+		$this->list[3] = 'q';
+		$this->assertEquals('q', $this->list->get(3));
+		
+		$this->list[] = 'd';
+				
+		$this->assertEquals(['a','b','c','q','d','y','z','d'], $this->list->toArray());
+	}
+	
+	public function testOffsetGet()
+	{
+		$this->assertEquals('c', $this->list[2]);
+	}
+	
+	public function testOffsetUnset()
+	{
+		unset($this->list[2]);
+		
+		$this->assertTrue($this->list->equals(new ArrayList(['a','b','d','y','z'])));
+	}
+	
 	/******************************************************
 	 ** Exceptional Cases
 	 ******************************************************/

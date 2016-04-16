@@ -36,4 +36,28 @@ trait ImmutableListTrait
 	{
 		throw new UnsupportedOperationException('set');
 	}
+	
+	/*********************************************
+	 ** Array Access Methods
+	 *********************************************/
+		
+	/**
+	 *
+	 * {@inheritDoc}
+	 * @see ArrayAccess::offsetSet()
+	 */
+	public function offsetSet($offset, $value)
+	{
+		throw new UnsupportedOperationException('offsetSet');
+	}
+	
+	/**
+	 *
+	 * {@inheritDoc}
+	 * @see ArrayAccess::offsetUnset()
+	 */
+	public function offsetUnset($offset)
+	{
+		throw new UnsupportedOperationException('offsetUnset');
+	}
 }

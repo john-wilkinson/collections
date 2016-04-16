@@ -109,4 +109,51 @@ class HashMapTest extends PHPUnit_Framework_TestCase
 		
 		$this->assertEquals(new ArrayList(['bar','baz','frank']), $values);
 	}
+	
+	public function testOffsetExists()
+	{
+		$this->assertTrue(isset($this->map['foo']));
+		$this->assertFalse(isset($this->map[11]));
+		$this->assertFalse(isset($this->map['biscuit']));
+		$this->assertFalse(isset($this->map['yellow']));
+	}
+	
+	public function testOffsetSet()
+	{
+		$this->map['foo'] = 74;
+		
+		$this->assertEquals(new HashMap([
+				'foo'	=> 74,
+				'by'	=> 'baz',
+				'bob'	=> 'frank'
+		]), $this->map);
+	}
+	
+	public function testOffsetGet()
+	{
+		$this->assertEquals('frank', $this->map['bob']);
+	}
+	
+	public function testOffsetUnset()
+	{
+		unset($this->map['by']);
+	
+		$this->assertEquals(new HashMap([
+				'foo'	=> 'bar',
+				'bob'	=> 'frank'
+		]), $this->map);
+	}
+
+	/********************************************
+	 ** Exceptional cases
+	 ********************************************/
+	
+	/**
+	 * @expectedException Jmw\Collection\Exception\UnsupportedOperationException
+	 */
+	public function testOffsetAppend()
+	{
+		$this->map[] = 'q';
+	}
+	
 }

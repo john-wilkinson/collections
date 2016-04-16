@@ -138,4 +138,32 @@ class Tuple extends CollectionAbstract implements ListInterface, ImmutableInterf
 	{
 		return new ArrayList(array_slice($this->values, $from, $to - $from));
 	}
+	
+	/*********************************************
+	 ** Array Access Methods
+	 *********************************************/
+	
+	/**
+	 *
+	 * {@inheritDoc}
+	 * @see ArrayAccess::offsetExists()
+	 */
+	public function offsetExists($offset)
+	{
+		if(!is_int($offset) || $offset >= $this->size() || $offset < 0) {
+			return false;
+		} else {
+			return true;
+		}
+	}
+	
+	/**
+	 *
+	 * {@inheritDoc}
+	 * @see ArrayAccess::offsetGet()
+	 */
+	public function offsetGet($offset)
+	{
+		return $this->get($offset);
+	}
 }
