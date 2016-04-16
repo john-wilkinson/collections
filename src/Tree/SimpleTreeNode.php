@@ -223,22 +223,25 @@ class SimpleTreeNode implements TreeNodeInterface
 	 * it's children
 	 * @param number $level
 	 */
-	public function printTree($level = 0)
+	public function toString($level = 0)
 	{
+		$output = "";
 		for($i = 0; $i < $level; $i++)
 		{
-			echo "\t";
+			$output .= "\t";
 		}
 		
-		print_r($this->value());
+		$output .= print_r($this->value(), true);
 		
-		echo "\n";
+		$output .= "\n";
 		
 		$iterator = $this->children->iterator();
 		
 		while($iterator->hasNext())
 		{
-			$iterator->next()->printTree($level + 1);
+			$output .= $iterator->next()->toString($level + 1);
 		}
+		
+		return $output;
 	}
 }

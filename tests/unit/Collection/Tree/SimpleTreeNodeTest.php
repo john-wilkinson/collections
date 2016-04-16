@@ -181,13 +181,9 @@ class SimpleTreeNodeTest extends PHPUnit_Framework_TestCase
 	public function testPrintTree()
 	{
 		$expected = "root\n\tfruits\n\t\tapple\n\t\tbanana\n\t\tcherry\n\tcolors\n\t\tred\n\t\tblue\n\t\tgreen\n\t\tyellow\n\tbooleans\n\t\ttrue\n\t\tfalse\n";
-		
-		ob_start();
-		
-		$this->tree->printTree();
-		
-		$buffer = ob_get_clean();
-		
-		$this->assertEquals($expected, $buffer);
+				
+		$actual = $this->tree->toString();
+				
+		$this->assertEquals($expected, $actual);
 	}
 }
