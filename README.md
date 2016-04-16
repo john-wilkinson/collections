@@ -79,14 +79,14 @@ The MIT License (MIT). Please see [License File](LICENSE.md) for more informatio
 [ico-version]: https://img.shields.io/packagist/v/jwilkinson/collections.svg?style=flat-square
 [ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
 [ico-travis]: https://img.shields.io/travis/john-wilkinson/collections/master.svg?style=flat-square
-[ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/thephpleague/:package_name.svg?style=flat-square
-[ico-code-quality]: https://img.shields.io/scrutinizer/g/thephpleague/:package_name.svg?style=flat-square
+[ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/john-wilkinson/collections.svg?style=flat-square
+[ico-code-quality]: https://img.shields.io/scrutinizer/g/john-wilkinson/collections.svg?style=flat-square
 [ico-downloads]: https://img.shields.io/packagist/dt/jwilkinson/collections.svg?style=flat-square
 
 [link-packagist]: https://packagist.org/packages/jwilkinson/collections
 [link-travis]: https://travis-ci.org/john-wilkinson/collections
-[link-scrutinizer]: https://scrutinizer-ci.com/g/thephpleague/:package_name/code-structure
-[link-code-quality]: https://scrutinizer-ci.com/g/thephpleague/:package_name
+[link-scrutinizer]: https://scrutinizer-ci.com/g/john-wilkinson/collections/code-structure
+[link-code-quality]: https://scrutinizer-ci.com/g/john-wilkinson/collections
 [link-downloads]: https://packagist.org/packages/jwilkinson/collections
 [link-author]: https://github.com/jwilkinson
 [link-contributors]: ../../contributors

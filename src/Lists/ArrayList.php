@@ -365,4 +365,6 @@ class ArrayList extends CollectionAbstract implements ListInterface
 	{
 		$this->removeAt($offset);
 	}
+	
+	
 }
